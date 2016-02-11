@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http.equi="Content-Type" content="text/html charset=utf-8">
+		<title>Sumador_ramdon</title>
+		<script type="text/javascript" charset="utf-8">
+function changer (id, newValue){
+	var elem =document.getElementById(id);
+  	elem.innerHTML = newValue;
+}
+
+function adder (optag, restag){
+	var operation = document.getElementById(optag);
+	var operands = operation.innerHTML.split('+');
+	var result = parseInt(operands[0]) +
+  		parseInt(operands[1]);
+	changer(restag,'=' + result);
+}
+function numRam (){
+	var pt = Math.round(Math.random()*1000);
+	var pt2 = Math.round(Math.random()*1000);
+	changer("op", pt +"+"+pt2);
+}
+
+</script>
+</head>
+<body>
+<p><span id='op'>3+4</span><span id='res'></span><a href="javascript:adder('op','res')"> Check out the total!</a></p>
+<p></span><a href="javascript:numRam()">Another one, please click in "Check out" to see the result!</a></p>
+</body>
+</html>
